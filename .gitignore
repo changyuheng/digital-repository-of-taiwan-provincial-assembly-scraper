@@ -1,4 +1,6 @@
+cache
 config.toml
+*.csv
 
 # Python {{{
 led / optimized / DLL files
