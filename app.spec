@@ -6,7 +6,7 @@ import pathlib
 block_cipher = None
 
 
-a = Analysis([pathlib.Path('.venv/Scripts/drtpa-scraper')],
+a = Analysis([pathlib.Path(f'.venv/{"Scripts" if os.name == "nt" else "bin"}/drtpa-scraper')],
              pathex=[],
              binaries=[],
              datas=[],
