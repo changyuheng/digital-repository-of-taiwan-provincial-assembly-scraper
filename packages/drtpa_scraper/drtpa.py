@@ -79,6 +79,7 @@ class SimpleDrtpa:
             i: int
             for i in range(100):
                 try:
+                    time.sleep(1)
                     link.click()
                     d: webdriver.Edge
                     WebDriverWait(self.edge_driver, 10).until(lambda d: len(d.window_handles) > 1)
@@ -93,7 +94,6 @@ class SimpleDrtpa:
                             self.edge_driver.window_handles[len(self.edge_driver.window_handles) - 1])
                         self.edge_driver.close()
                     self.edge_driver.switch_to.window(search_window)
-                    time.sleep(1)
                     continue
                 else:
                     break
@@ -101,6 +101,7 @@ class SimpleDrtpa:
                 if e:
                     raise e
 
+            time.sleep(1)
             data_table: WebElement = self.edge_driver.find_element(By.CLASS_NAME, 'meta_table')
             field: WebElement
             value: WebElement
