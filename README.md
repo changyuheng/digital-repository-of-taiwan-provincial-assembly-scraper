@@ -22,7 +22,7 @@ drtpa-scraper config account <你的帳號>
 drtpa-scraper config password "<你的密碼>"
 ```
 
-3. [選擇性] 設定瀏覽器
+3. [選擇性] 設定瀏覽器。支援 `Edge` 與 `Firefox`，預設為 `Edge`。
 
 ```
 drtpa-scraper config browser "firefox"
