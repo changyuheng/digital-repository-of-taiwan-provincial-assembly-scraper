@@ -19,7 +19,13 @@ drtpa-scraper config account <你的帳號>
 2. 設定密碼
 
 ```
-drtpa-scraper config account "<你的密碼>"
+drtpa-scraper config password "<你的密碼>"
+```
+
+3. [選擇性] 設定瀏覽器
+
+```
+drtpa-scraper config browser "firefox"
 ```
 
 ## 使用
