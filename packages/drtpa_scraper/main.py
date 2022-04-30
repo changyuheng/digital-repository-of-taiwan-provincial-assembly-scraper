@@ -58,6 +58,7 @@ def scrape(args: argparse.Namespace) -> int:
     simple_drtpa: SimpleDrtpa = SimpleDrtpa(get_config())
     simple_drtpa.login()
     results: list[dict[str: str]] = simple_drtpa.search(args.keyword)
+    simple_drtpa.quit()
     get_logger().debug(results)
     output_search_results(results, args.keyword)
     return 0
@@ -72,7 +73,7 @@ def get_arg_parser() -> argparse.ArgumentParser:
     subparsers: argparse._SubParsersAction = parser.add_subparsers()
 
     subparser_config: argparse.ArgumentParser = subparsers.add_parser("config", help="read and write config")
-    subparser_config.add_argument("field", nargs='?', choices=["account", "password"])
+    subparser_config.add_argument("field", nargs='?', choices=["account", "password", "browser"])
     subparser_config.add_argument("value", nargs='?')
     subparser_config.set_defaults(func=config)
 

@@ -10,7 +10,7 @@ import tomli_w
 from .log import get_logger
 
 
-CONFIG_VERSION: int = 1
+CONFIG_VERSION: int = 2
 CONFIG_FILENAME: str = 'config.toml'
 CONFIG_PATH: pathlib.Path = pathlib.Path(CONFIG_FILENAME)
 
@@ -20,6 +20,7 @@ class Config:
     data_version: int = CONFIG_VERSION
     account: str = ""
     password: str = ""
+    browser: str = "edge"
 
 
 def get_config() -> Config:
