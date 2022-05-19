@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "drtpa-scraper"
-version = "1.1.0"
+version = "1.2.0"
 description = "臺灣省議會史料總庫檢索結果截取器"
 license = "MPL-2.0"
 authors = ["Henry Chang <mr.changyuheng@gmail.com>"]

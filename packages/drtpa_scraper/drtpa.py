@@ -110,7 +110,7 @@ class SimpleDrtpa:
             data_table: WebElement = self.browser_driver.find_element(By.CLASS_NAME, 'meta_table')
             field: WebElement
             value: WebElement
-            meta: dict[str: str] = dict()
+            meta: dict[str: str] = {'link': self.browser_driver.current_url}
             for field, value in zip(
                     data_table.find_elements(By.CLASS_NAME, 'meta_field'),
                     data_table.find_elements(By.CLASS_NAME, 'meta_value')):
