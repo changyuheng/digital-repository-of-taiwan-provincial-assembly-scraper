@@ -2,7 +2,7 @@
 
 https://user-images.githubusercontent.com/1842626/159391234-82fc0e74-562b-4433-b1b5-da8c12672ed8.mp4
 
-截取臺灣省議會史料總庫檢索結果的[後設資料](https://zh.wikipedia.org/zh-tw/%E5%85%83%E6%95%B0%E6%8D%AE)並輸出到 `<關鍵字>.csv` 檔案。
+截取[臺灣省議會史料總庫](https://drtpa.th.gov.tw/)檢索結果的[後設資料](https://zh.wikipedia.org/zh-tw/%E5%85%83%E6%95%B0%E6%8D%AE)並輸出到 `<關鍵字>.csv` 檔案。
 
 ## 下載
 
