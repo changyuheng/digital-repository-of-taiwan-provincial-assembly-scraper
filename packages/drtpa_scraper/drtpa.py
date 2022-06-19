@@ -56,7 +56,7 @@ class SimpleDrtpa:
         for i in range(100):
             try:
                 self.browser_driver.get(self.LOGIN_PAGE)
-                d: webdriver.Chrome | webdriver.Edge
+                d: webdriver.Edge | webdriver.Firefox
                 WebDriverWait(self.browser_driver, 10).until(lambda d: d.find_element(By.ID, 'uname'))
                 WebDriverWait(self.browser_driver, 1).until(lambda d: d.find_element(By.ID, 'upass'))
 
@@ -86,7 +86,7 @@ class SimpleDrtpa:
             for i in range(100):
                 try:
                     link.click()
-                    d: webdriver.Chrome | webdriver.Edge
+                    d: webdriver.Edge | webdriver.Firefox
                     WebDriverWait(self.browser_driver, 10).until(lambda d: len(d.window_handles) > 1)
                     self.browser_driver.switch_to.window(
                         self.browser_driver.window_handles[len(self.browser_driver.window_handles) - 1])
@@ -131,7 +131,7 @@ class SimpleDrtpa:
         for i in range(100):
             try:
                 self.browser_driver.get(self.ARCHIVE_INDEX_PAGE)
-                d: webdriver.Edge
+                d: webdriver.Edge | webdriver.Firefox
                 WebDriverWait(self.browser_driver, 10).until(lambda d: d.find_element(By.ID, 'search_input'))
                 WebDriverWait(self.browser_driver, 10).until(lambda d: d.find_element(By.ID, 'search_submit'))
 
