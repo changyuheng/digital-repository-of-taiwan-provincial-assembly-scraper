@@ -25,7 +25,7 @@ def config(args: argparse.Namespace) -> int:
     return 0
 
 
-def output_search_results(results: list[dict[str: str]], keyword: str, format: OutputFormat = None) -> None:
+def output_search_results(results: list[dict[str, str]], keyword: str, format: OutputFormat = None) -> None:
     if format is None:
         format = OutputFormat.CSV
 
@@ -33,7 +33,7 @@ def output_search_results(results: list[dict[str: str]], keyword: str, format: O
         fields: list[str] = list()
         field_set: set[str] = set()
 
-        result: dict[str: str]
+        result: dict[str, str]
         for result in results:
             k: str
             for k in result:
@@ -57,7 +57,7 @@ def output_search_results(results: list[dict[str: str]], keyword: str, format: O
 def scrape(args: argparse.Namespace) -> int:
     simple_drtpa: SimpleDrtpa = SimpleDrtpa(get_config())
     simple_drtpa.login()
-    results: list[dict[str: str]] = simple_drtpa.search(args.keyword)
+    results: list[dict[str, str]] = simple_drtpa.search(args.keyword)
     simple_drtpa.quit()
     get_logger().debug(results)
     output_search_results(results, args.keyword)

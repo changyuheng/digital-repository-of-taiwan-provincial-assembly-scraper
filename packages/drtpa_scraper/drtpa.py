@@ -75,8 +75,8 @@ class SimpleDrtpa:
             if e:
                 raise e
 
-    def _get_metas_from_search_result_links(self, links) -> list[dict[str: str]]:
-        metas: list[dict[str: str]] = list()
+    def _get_metas_from_search_result_links(self, links) -> list[dict[str, str]]:
+        metas: list[dict[str, str]] = list()
         e: Optional[Union[ElementClickInterceptedException, TimeoutException]] = None
         search_window: str = self.browser_driver.current_window_handle
 
@@ -110,7 +110,7 @@ class SimpleDrtpa:
             data_table: WebElement = self.browser_driver.find_element(By.CLASS_NAME, 'meta_table')
             field: WebElement
             value: WebElement
-            meta: dict[str: str] = {'link': self.browser_driver.current_url}
+            meta: dict[str, str] = {'link': self.browser_driver.current_url}
             for field, value in zip(
                     data_table.find_elements(By.CLASS_NAME, 'meta_field'),
                     data_table.find_elements(By.CLASS_NAME, 'meta_value')):
@@ -123,8 +123,8 @@ class SimpleDrtpa:
             self.browser_driver.switch_to.window(search_window)
         return metas
 
-    def search(self, keyword: str) -> list[dict[str:str]]:
-        results: list[dict[str: str]] = list()
+    def search(self, keyword: str) -> list[dict[str, str]]:
+        results: list[dict[str, str]] = list()
         e: Optional[TimeoutException] = None
 
         i: int
